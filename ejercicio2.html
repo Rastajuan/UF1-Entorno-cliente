@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+
+
+</head>
+<body>
+    <script type="text/javascript">
+    // Creamos la variable edad y la inicializamos con el valor que pedimos por pantalla mediante window.prompt(). Con la función 'parseInt' transformamos el valor en entero
+    var edad=parseInt(window.prompt("Introduzca su edad mediante un número entero mayor que 0: ","Número mayor que 0"));
+    
+
+    //Checamos el valor de la entrada del usuario mediante un bucle 'while'. Mientras el valor introducido no sea mayor que 0  o no sea un valor numérico (isNaN) seguirá pidiendo la edad y colocando un mensaje de error
+    while (edad<=0 || isNaN(edad)) {
+        edad=parseInt(window.prompt("Se ha producido un error.\nIntroduzca su edad mediante un número entero MAYOR que 0: "));
+    }
+
+    alert(typeof(edad));
+
+    // RESULTADO UTILIZANDO UNA SENTENCIA IF-ELSE
+
+    // Mediante una sentencia IF_ELSE cribamnos el valor de la variable y emitimos el resultado correspondiente
+    document.write("Resultado con sentencia 'if-else' <br>");
+    if(edad<=2){  //Bebé
+        document.write("Con " + edad +" años se le considera un bebé <br>");
+    }else if (edad>2 && edad<=12) { //Niño
+        document.write("Con " + edad +" años se le considera un niño <br>");
+    }else if (edad>=13 && edad<=21) { //Adolescente
+        document.write("Con " + edad +" años se le considera un adolescente <br>");
+    }else if (edad>=22 && edad<=35) { //Joven
+        document.write("Con " + edad +" años se le considera un joven <br>");
+    }else if (edad>=35 && edad<=65) { //Adulto
+        document.write("Con " + edad +" años se le considera un adulto <br>");
+    }else { //Jubilado
+        document.write("Con " + edad +" años se le considera un jubilado <br>");
+    } 
+
+   //RESULTADO UTILIZANDO UN BUCLE SWITCH-CASE
+        document.write("Resultado con bucle 'Switch-Case' <br>");
+        switch (true) {
+        case (edad<=2):
+            document.write("Con " + edad +" años se le considera un bebé");
+            break;
+        case (edad>2 && edad<=12):
+            document.write("Con " + edad +" años se le considera un niño");
+            break;
+        case (edad>=13 && edad<=21):
+            document.write("Con " + edad +" años se le considera un adolescente");
+            break;
+        case (edad>=22 && edad<=35):
+            document.write("Con " + edad +" años se le considera un joven");
+            break;
+        case (edad>=35 && edad<=65):
+            document.write("Con " + edad +" años se le considera un adulto");
+            break;
+        case (edad>65):
+            document.write("Con " + edad +" años se le considera un jubilado");
+        break;
+        default:
+           document.write("No ha introducido un valor correcto");
+            break;
+    } 
+
+    
+    </script>
+</body>
+</html>

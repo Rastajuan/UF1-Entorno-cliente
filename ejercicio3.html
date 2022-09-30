@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      //Creacion de variables a utilizar
+        var numeros =[1,2,3,4,5,6,7,8,9];//Los números que utilizaremos
+        var a, b, c;//Las 3 posiciones de la tupla
+        const tupla = new Array();//La tupla inicialmente vacía
+
+      document.write("<strong>A CONTINUACION SE MUESTRAN TODAS LAS 3-TUPLAS DE NUMEROS ENTRE 1 Y 9 (INCLUIDOS Y DIFERENTES) QUE SUMAN 15 </strong><br><br>")
+        //Con el primer 'for' asignamos el valor de la primera variable de la tupla, a
+        for(var i=0; i<numeros.length; i++) {
+        a = numeros[i];
+          //Con el segundo 'for' asignamos el valor de la 2a variable de la tupla, b
+          for(var j = 0; j < numeros.length; j++) {
+             b = numeros[j];
+             //Con el tercer 'for' asignamos el valor de la 3a variable de la tupla, c
+              for(var k = 0; k < numeros.length; k++) {
+                  c = numeros[k];
+                  //Si cumple la condición del 'if' rellenamos la tupla con los valores
+                   if (a != b && a != c && b != c && a + b + c === 15) {
+                    document.write("(a=" + a + ", b=" + b + ", c=" + c + ") ====> ");
+                    tupla.push(a,b,c);//Llenamos la tupla con los valores que cumplen la condición con la funcion 'push()'
+                    document.write("(<strong>" + tupla + "</strong>)<br>");
+                    //Vaciamos la tupla para la siguiente iteracion mediante un bucle while que hará un pop() mientras la tupla no esté vacía, ya que pop() solamente elimina el último valor del array
+                    while ((tupla.length>0)) {
+                      tupla.pop();
+                    }
+                
+                }
+            }
+        }
+    }
+        
+    
+
+    </script>
+  </body>
+</html>
